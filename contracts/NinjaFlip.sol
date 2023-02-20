@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-// Uncomment this line to use console.log
-// Deployed to Goerli 0x36B8607c7299480D44E556C55675933766576309
-import "hardhat/console.sol";
+// Deployed to Goerli 0x71C2Fd7d36b4484E172286f40fEf5e21E4DBd85d
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract NinjaFlip {
@@ -61,13 +59,10 @@ contract NinjaFlip {
         if(rand==playerRec[msg.sender].choose){
             playerRec[msg.sender].state=StateType.win;
             IERC20(ERC20Contract).transfer(msg.sender, playerRec[msg.sender].amount*2*(100-tax)/100);
-            console.log("you win");
         }
         else{
             playerRec[msg.sender].state=StateType.lose;
-            console.log("you lose");
         }
-        console.log("rand=",rand);
     }
 
     
